@@ -1,0 +1,298 @@
+/*Variables - custom propertys*/
+:root {
+    --primario: #062C30;
+    --secundario: #05595B;
+    --terciario: #E2D784;
+    --blanco: #F5F5F5;
+
+    --fuente_principal: 'Raleway', sans-serif; 
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+/*****BOX MODEL*****/
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*------------GLOBALES----------*/
+
+body {
+    background-color: var(--primario);
+    font-size: 16px;
+    line-height: 1.5; /*Interlineado*/
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif; /*Fuente para los párrafos*/
+    color: var(--blanco);
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none; /*Le quitamos la linea a los enlaces*/
+}
+
+h1,h2,h3 {
+    text-align: center;
+    color: var(--terciario);
+    font-family: var(--fuente_principal);
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+
+.contenedor {
+    max-width: 120rem;  /*Que tome como máximo 1200px*/
+    margin: 0 auto; /*Para centrar el contenido dentro del contenedor(img).*/
+}
+
+
+/*CODIGO APLICANDO BEM*/
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;  /*Primer valor es arriba y abajo, el otro es izquierda derecha.*/
+}
+
+/*------FOOTER -----*/
+
+.footer {
+    background-color: var(--secundario);
+    padding: .5rem 0;
+    margin-top: 1rem;
+}
+
+.footer__texto {
+    text-align: center;
+    font-family: var(--fuente_principal);
+    font-size: 2rem;
+}
+
+/*-------NAVEGACION------*/
+
+.nav {
+    background-color: var(--secundario);
+    padding: 1rem 0; /*Hacemos mas ancha la navegación, aumentando el padding arriba y abajo*/
+    display: flex;
+    justify-content: center;
+    /*gap: 2rem; Para separar los dos enlaces dentro del nav FORMA NUEVA*/
+}
+
+.nav__enlace {
+    font-family: var(--fuente_principal);
+    font-size: 1.5rem;
+    color: var(--terciario);
+    font-weight: 700;
+    margin-right: 2rem; /*Separar los enlaces del nav FORMA ANTIGUA (actualmente la soporta mas navegadores.)*/
+}
+
+.nav__enlace:last-of-type {
+    margin-right: 0; /*Este pseudoselector toma el último enlace de la clase para poderle hacer modificaciones, para el primero es first.*/
+}
+
+.nav__enlace--activo,  /*Para que el link del nav cambie de color mientras se navegue en el.*/
+.nav__enlace:hover {
+    color: var(--blanco);
+}
+
+    /*-----GRID-------*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Declaramos dos columnas para dispositivos pequeños*/
+    column-gap: 2rem;
+    row-gap: 2rem;  /*gap: 2rem hace esas dos líneas de código*/
+    gap: 2rem;
+}
+
+
+@media (min-width: 768px) { 
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /*Declaramos 3 columnas para pantallas mas grandes*/
+    }
+}
+
+
+
+  /*------PRODUCTOS-------*/
+
+.producto {
+    background-color: var(--secundario);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.producto__nombre {
+    font-size: 3.5rem;
+}
+
+.producto__precio {
+    font-size: 2.5rem;
+    color: var(--terciario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuente_principal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;  /*interlineado*/
+    font-weight: bold;
+}
+
+/*------GRAFICOS---------  */
+
+.grafico {
+    min-height: 30rem;  /*Para que de espacio a las imagenes en el formato -768px*/
+    background-repeat: no-repeat; /*Paraque no se repita la img.*/
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+/*Miramos las coordenadas en el inspector del navegador
+ y aplicamos las imagenes donde queramos, dando las posiciones en las que se va a mover, 
+en fila y en columna 
+row, números de arriba hacia abajo, column, números de izquierda a derecha
+*/
+
+.grafico--camisas {         
+    grid-row: 2 / 3;    
+    background-image: url(../img/grafico1.jpg);
+    
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);        /*Configuracion para pantallas menores a 768 px, (celulares)*/
+    grid-row: 8 / 9;            /*Todas esas coordenadas se pueden ver en moxila developer edition*/
+}
+
+
+@media (min-width: 768px) { 
+    .grafico--node {         /*Configuración para pantallas de 768px en adelante.*/
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+        
+    }    
+}
+
+
+/*SECCION NOSOTROS*/
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);  /*Lo ordenamos en dos filas cuando la pantalla no es grande*/
+}
+
+@media (min-width: 768px) { 
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr); /*Pasamos la imagen a una columna aparte cuando las pantallas son grandes*/
+        column-gap: 2rem;
+    }        
+}
+
+.nosotros__img {
+    grid-row: 1 / 2; /*Ponemos la imagen encima del texto.*/
+}
+
+@media (min-width: 768px) { 
+    .nosotros__img {
+        grid-column: 2 / 3; /*Movemos la foto a la derecha para pantallas mas grandes.*/
+    }
+}
+
+
+/*Bloques*/
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+/*Pag Producto*/
+
+@media (min-width: 768px) { 
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulario__campo {
+    border-color: var(--secundario);
+    border-width: .5rem;
+    border-style: solid;
+
+    border: .5rem solid var(--secundario); /*Lo mismo de arriba*/
+    background-color: transparent;
+    color: #F5F5F5;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none; /*Para quitar las flechas de aumentar y disminuir la cantidad*/
+    min-width: 50%; 
+}
+
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuente_principal);
+    padding: 2rem;
+    transition: background-color .3s ease; /*Transicion cuando se pone el mouse encima del submit*/
+    grid-column: 1 / 3; /*Mover columna de agrgar carrito*/
+}
+
+.formulario__submit:hover {
+    font-size: 2.4rem;
+    cursor: pointer; /*Para que salga la manito encima del submit*/
+    background-color: var(--terciario);
+}
+
+.tallas {
+    background-color: transparent;
+    color: #000;
+}

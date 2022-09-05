@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cam Store</title>
+
+         <!-----------FUENTE------------>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+ 
+
+        <!-------------CSS------------->
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+    </head>
+
+    <body>
+        <!--Con este header hacemos que cada vez que den click en el logo los lleve a la pag principal.-->
+        <header class="header">
+            <a href="index.html">
+                <img class="header__logo" src="img/logo.png" alt="logotipo"/>   <!---el alt es por sino carga la img salga ese txto.---->
+            </a>
+        </header>
+
+        <nav class="nav">
+            <a class="nav__enlace " href="index.html">TIENDA</a>  <!--Plugin,  a*2 nos crea dos enlaces a la vez-->
+            <a class="nav__enlace nav__enlace--activo" href="nosotros.html">NOSOTROS</a>
+        </nav>
+        
+        <main>
+            <h1>NOSOTROS</h1>
+
+            <div class="nosotros">
+                <div class="nosotros__contenido">
+                    <p>
+                        Duis arcu enim, luctus quis convallis non, gravida eu libero. Donec pellentesque, 
+                        sapien quis molestie posuere, lorem odio consectetur elit, non finibus tellus tortor vitae mauris.
+                        In vitae scelerisque sapien. Integer a est sapien. Quisque nec sagittis leo. Vivamus maximus viverra
+                        neque et auctor. Sed non massa maximus, imperdiet sapien eu, congue dolor. Quisque orci est,
+                        tincidunt non neque et, ultrices commodo enim. Vivamus turpis risus, ornare ornare justo vitae, 
+                        gravida pellentesque erat. Fusce eget vestibulum velit.
+                    </p>
+                </div> <!--.nosotros__contenido-->
+                <img class="nosotros__img" src="img/nosotros.jpg" alt="Imagen Nosotros">
+            </div>
+        </main>
+
+        <section class="contenedor compra">
+            <h2 class="compra__titulo">¿Por qué comprar con nosotros?</h2>
+            <div class="bloques">
+                <div class="bloque">
+                    <img class="bloque__img" src="img/icono_1.png" alt="Icono1">
+                    <h3 class="bloque__titulo">Mejor Precio</h3>
+                    <p>Vivamus turpis risus, ornare ornare justo vitae, 
+                        gravida pellentesque erat. Fusce eget vestibulum velit.
+                    </p>
+                </div> <!-----bloque----->
+
+                <div class="bloque">
+                    <img class="bloque__img" src="img/icono_2.png" alt="icono_2">
+                    <h3 class="bloque__titulo">Para Devs</h3>
+                    <p>Vivamus turpis risus, ornare ornare justo vitae, 
+                        gravida pellentesque erat. Fusce eget vestibulum velit.
+                    </p>
+                </div> <!-----bloque----->
+
+                <div class="bloque">
+                    <img class="bloque__img" src="img/icono_3.png" alt="Icono3">
+                    <h3 class="bloque__titulo">Envío Rápido</h3>
+                    <p>Vivamus turpis risus, ornare ornare justo vitae, 
+                        gravida pellentesque erat. Fusce eget vestibulum velit.
+                    </p>
+                </div> <!-----bloque----->
+
+                <div class="bloque">
+                    <img class="bloque__img" src="img/icono_4.png" alt="icono_4">
+                    <h3 class="bloque__titulo">La mejor Seguridad</h3>
+                    <p>Vivamus turpis risus, ornare ornare justo vitae, 
+                        gravida pellentesque erat. Fusce eget vestibulum velit.
+                    </p>
+                </div> <!-----bloque----->
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer__texto">Cam Store. TODOS LOS DERECHOS RESERVADOS 2022.</p>
+        </footer>
+    </body>
+</html>
