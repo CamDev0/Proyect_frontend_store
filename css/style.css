@@ -90,6 +90,17 @@ h3 {
     font-size: 2rem;
 }
 
+.footer__texto a{
+    text-decoration: none;
+    color: var(--primario);
+}
+
+.footer__texto a:hover{
+    text-decoration: line-through;
+    color: var(--terciario);
+}
+
+
 /*-------NAVEGACION------*/
 
 .nav {
